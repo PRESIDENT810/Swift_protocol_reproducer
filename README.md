@@ -4,7 +4,7 @@
 
 How to produce：
 ```swift
-FrameworkA（static）：
+// FrameworkA（static）：
 public func foo(){
     var change: [NSKeyValueChangeKey: Any]? = [:]
     change![.newKey] = "hello world"
@@ -72,7 +72,7 @@ Disassembly of section __TEXT,__text:
 ```
 
 ``` Swift
-FrameworkB（static）:
+// FrameworkB（static）:
 public func bar(){
     var change: [RunLoop.Mode: Any]? = [:]
     var mode = RunLoop.Mode.init(rawValue: "hello world")
