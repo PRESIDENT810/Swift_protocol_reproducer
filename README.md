@@ -127,15 +127,15 @@ FrameworkA \
 
 由于FrameworkA的优化等级为O，swift编译器会对protocol witness符号进行一个优化（相同layout的类型可以共用一部分汇编代码），所以实际上：
 
-FrameworkA：foo (optimized) -> bar (optimized)
+FrameworkA：sSo13NSRunLoopModeaSHSCSH13_rawHashValue4seedS2i_tFTW (optimized) -> sSo13NSRunLoopModeaSHSCSH13_rawHashValue4seedS2i_tFTW (optimized)
 
 而FrameworkB没有开启优化，并且在FrameworkB的scope中没有其它类型可以合并protocol witness，因此：
 
-FrameworkB: bar (normal)
+FrameworkB: sSo13NSRunLoopModeaSHSCSH13_rawHashValue4seedS2i_tFTW (normal)
 
 链接之后会变为：
 
-main.o: foo (optimized) -> bar (normal)
+main.o: sSo13NSRunLoopModeaSHSCSH13_rawHashValue4seedS2i_tFTW (optimized) -> sSo13NSRunLoopModeaSHSCSH13_rawHashValue4seedS2i_tFTW (normal)
 
 最终触发程序崩溃
 
