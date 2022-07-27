@@ -1,4 +1,4 @@
-# hash
+# Swift_protocol_reproducer
 
 本项目是用来复现Swift编译器对protocol进行-O优化时生成同名跳板符号导致的bug
 
