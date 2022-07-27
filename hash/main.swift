@@ -6,6 +6,13 @@
 //
 
 import Foundation
+import FrameworkA
+import FrameworkB
 
-print("Hello, World!")
+func main(){
+    var change: [NSKeyValueChangeKey: Any]? = [:]
+    var key = NSKeyValueChangeKey.init(rawValue: "hello world")
+    change![key] = "hello world"
+}
 
+main()
